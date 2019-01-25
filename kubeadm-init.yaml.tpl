@@ -1,7 +1,7 @@
 apiVersion: kubeadm.k8s.io/v1beta1
 kind: ClusterConfiguration
 kubernetesVersion: stable
-controlPlaneEndpoint: " K8SHA_IPVIRTUAL:16443"
+controlPlaneEndpoint: "K8SHA_IPVIRTUAL:16443"
 networking:
   podSubnet: "K8SHA_CIDR"
   dnsDomain: "cluster.local"
