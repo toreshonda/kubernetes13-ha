@@ -22,6 +22,6 @@ controllerManager:
     horizontal-pod-autoscaler-use-rest-clients: "true"
     horizontal-pod-autoscaler-sync-period: "10s"
     node-monitor-grace-period: "10s"
-    experimental-cluster-signing-duration: "87600"
+    experimental-cluster-signing-duration: "87600h"
 certificatesDir: "/etc/kubernetes/pki"
 
