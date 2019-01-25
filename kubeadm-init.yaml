@@ -2,17 +2,17 @@ apiVersion: kubeadm.k8s.io/v1beta1
 kind: ClusterConfiguration
 kubernetesVersion: stable
 networking:
-  podSubnet: "K8SHA_CIDR"
+  podSubnet: "192.168.0.0/16"
   dnsDomain: "cluster.local"
 apiServer:
   certSANs:
-  - K8SHA_HOSTNAME1
-  - K8SHA_HOSTNAME2
-  - K8SHA_HOSTNAME3
-  - K8SHA_IP1
-  - K8SHA_IP2
-  - K8SHA_IP3
-  - K8SHA_IPVIRTUAL
+  - oais-master01
+  - oais-master02
+  - oais-master03
+  - 172.20.141.80
+  - 172.20.141.84
+  - 172.20.141.88
+  - 172.20.141.98
   - 127.0.0.1
   extraArgs:
     authorization-mode: "Node,RBAC"

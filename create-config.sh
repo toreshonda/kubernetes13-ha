@@ -26,7 +26,7 @@ export K8SHA_IP1=172.20.141.80
 export K8SHA_IP2=172.20.141.84
 
 # master03 ip address
-export K8SHA_IP3=172.20.141.83
+export K8SHA_IP3=172.20.141.88
 
 # master01 hostname
 export K8SHA_HOSTNAME1=oais-master01
@@ -38,7 +38,7 @@ export K8SHA_HOSTNAME2=oais-master02
 export K8SHA_HOSTNAME3=oais-master03
 
 # keepalived auth_pass config, all masters must be same
-export K8SHA_KA_AUTH=56cf8dd754c91194d1600c483e10abfr
+export K8SHA_KA_AUTH=5635t4dd754c91194d1600c483e10abfr
 
 # kubernetes CIDR pod subnet, if CIDR pod subnet is "10.244.0.0/16" please set to "10.244.0.0\\/16"
 export K8SHA_CIDR=192.168.0.0\\/16
@@ -85,6 +85,10 @@ sed \
 -e "s/K8SHA_IPVIRTUAL/$K8SHA_IPVIRTUAL/g" \
 -e "s/K8SHA_CIDR/$K8SHA_CIDR/g" \
 kubeadm-init.yaml.tpl > kubeadm-init.yaml
+# copy CA to /etc/kubernetes/pki
+
+cp ssl/1/* /etc/kubernetes/pki/
+
 
 sed \
 -e "s/K8SHA_IPVIRTUAL/$K8SHA_IPVIRTUAL/g" \
